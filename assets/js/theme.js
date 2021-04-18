@@ -35,19 +35,21 @@ document.querySelector('.header-image-play').onclick = function() {
 
 
 const openMenu = () => {
-//  menu.classList.add('open');
   btnBurger.classList.remove('btn-active');
   btnBurger.classList.add('btn-hide');
   btnReturn.classList.remove('btn-hide');
-  //menu.classList.remove('header-menu-open');
   playIcon.classList.add('btn-hide');
-//  document.querySelectorAll('.language-hidden').forEach(n => n.classList.remove('hidden'));
   headerNav.classList.add('open-header-menu');
 
   headerMenu.style.display='flex';
   mobLang.style.display='flex';
   document.querySelector('.header-backgr').classList.add('header-container');
-  document.querySelector('.gallery-top-border').style.visibility='hidden';
+
+  document.querySelector('header').style.position='relative';
+
+  document.querySelector('main').style.display='none';
+  document.querySelector('footer').style.display='none';
+
 
 
 
@@ -55,19 +57,20 @@ const openMenu = () => {
 }
 
 const closeMenu = () => {
-//  menu.classList.remove('open');
   btnBurger.classList.add('btn-active');
   btnBurger.classList.remove('btn-hide');
   btnReturn.classList.add('btn-hide');
-  //menu.classList.add('header-menu-open');
   playIcon.classList.remove('btn-hide');
-//  document.querySelectorAll('.language-hidden').forEach(n => n.classList.add('hidden'));
   headerNav.classList.remove('open-header-menu');
 
   headerMenu.style.display='none';
   mobLang.style.display='none';
   document.querySelector('.header-backgr').classList.remove('header-container');
-  document.querySelector('.gallery-top-border').style.visibility='visible';
+
+  document.querySelector('header').style.position='fixed';
+
+  document.querySelector('main').style.display='block';
+  document.querySelector('footer').style.display='block';
 
 }
 
@@ -87,6 +90,8 @@ function trackScroll() {
     goTopBtn.classList.remove('back-to-top-show');
   }
 }
+
+
 
 
 function backToTop() {
